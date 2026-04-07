@@ -37,32 +37,21 @@ A premium, interactive calendar and task management component built with **Next.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Dhakshin2007/Dhakshin_TUF_Assignment
    ```
-2. Navigate to the project directory:
-   ```bash
-   cd interactive-calendar
-   ```
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
-5. Build for production:
+4. Build for production:
    ```bash
    npm run build
    ```
 
-## 📂 Project Structure
-```text
-src/
-├── app/            # Next.js App Router (Layouts, Global Styles)
-├── components/     # UI Components (Calendar, Sidebar, Toasts)
-└── lib/            # Utilities and Type Definitions
-```
 
 ## 📄 License
 This project is for demonstration purposes. All rights reserved.
