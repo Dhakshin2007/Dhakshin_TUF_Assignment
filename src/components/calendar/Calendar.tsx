@@ -67,7 +67,9 @@ interface SidebarContentProps {
   setEndTime: (time: string) => void;
   saveTask: () => void;
   editingTaskId: string | null;
+  setEditingTaskId: (id: string | null) => void;
   theme: 'light' | 'dark';
+  closeSidebar?: () => void;
 }
 
 // --- Main Component ---
@@ -342,7 +344,7 @@ export default function Calendar() {
                 )}
               >
                 <SidebarContent 
-                  {...{ currentDate, selectionMode, setSelectionMode, setRange, range, activeTab, setActiveTab, filteredTasks, toggleTaskCompletion, generateGoogleCalendarUrl, deleteTask, startEditing, isTaskInputOpen, setIsTaskInputOpen, newTaskText, setNewTaskText, startTime, setStartTime, endTime, setEndTime, saveTask, editingTaskId, theme }}
+                  {...{ currentDate, selectionMode, setSelectionMode, setRange, range, activeTab, setActiveTab, filteredTasks, toggleTaskCompletion, generateGoogleCalendarUrl, deleteTask, startEditing, isTaskInputOpen, setIsTaskInputOpen, newTaskText, setNewTaskText, startTime, setStartTime, endTime, setEndTime, saveTask, editingTaskId, setEditingTaskId, theme }}
                   closeSidebar={() => setIsSidebarOpen(false)}
                 />
               </motion.div>
@@ -356,7 +358,7 @@ export default function Calendar() {
           theme === 'dark' ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200"
         )}>
           <SidebarContent 
-            {...{ currentDate, selectionMode, setSelectionMode, setRange, range, activeTab, setActiveTab, filteredTasks, toggleTaskCompletion, generateGoogleCalendarUrl, deleteTask, startEditing, isTaskInputOpen, setIsTaskInputOpen, newTaskText, setNewTaskText, startTime, setStartTime, endTime, setEndTime, saveTask, editingTaskId, theme }}
+            {...{ currentDate, selectionMode, setSelectionMode, setRange, range, activeTab, setActiveTab, filteredTasks, toggleTaskCompletion, generateGoogleCalendarUrl, deleteTask, startEditing, isTaskInputOpen, setIsTaskInputOpen, newTaskText, setNewTaskText, startTime, setStartTime, endTime, setEndTime, saveTask, editingTaskId, setEditingTaskId, theme }}
           />
         </div>
 
@@ -468,7 +470,7 @@ function SidebarContent({
   generateGoogleCalendarUrl, deleteTask, startEditing, isTaskInputOpen, 
   setIsTaskInputOpen, newTaskText, setNewTaskText, startTime, 
   setStartTime, endTime, setEndTime, saveTask, editingTaskId, 
-  closeSidebar, theme 
+  setEditingTaskId, closeSidebar, theme 
 }: SidebarContentProps) {
   return (
     <>
